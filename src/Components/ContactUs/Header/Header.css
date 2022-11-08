@@ -1,0 +1,17 @@
+.header-back {
+    background-image: url(../../../assets/ContactUs2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 130vh;
+    position: relative;
+}
+
+.header-back::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.484);
+}

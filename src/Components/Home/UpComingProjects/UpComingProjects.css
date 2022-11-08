@@ -1,0 +1,61 @@
+.upComingBack {
+    background-image: url(../../../assets/ImgNum5.jpg);
+    background-size: cover;
+    height: 200vh;
+}
+
+@media (min-width: 768px) {
+    .upComingBack {
+        height: 170vh;
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    font-size: 18px;
+    /* display: flex; */
+
+}
+
+.swiper-slideUp img {
+    display: block;
+    width: 100%;
+    height: 80vh !important;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute !important;
+    top: 5% !important;
+    color: #1E5128 !important;
+
+}
+
+.swiper-button-prev {
+    left: 80% !important;
+}
+
+@media (min-width: 768px) {
+    .swiper-button-prev { 
+    left: 89% !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .swiper-button-prev {
+    left: 70% !important;
+
+    }
+
+}
+
+
+
+h6 {
+    font-size: 1.2rem !important;
+}

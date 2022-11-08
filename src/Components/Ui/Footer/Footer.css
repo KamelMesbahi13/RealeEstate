@@ -1,0 +1,15 @@
+.footer-back {
+    background-image: url(../../../assets/ImgNum7.jpg);
+    background-size: cover;
+}
+
+.footer-back-trans {
+    background-color: transparent;
+    border: 1px solid ;
+    padding-left: 0.3rem;
+}
+
+
+input:focus::placeholder {
+    color: transparent;
+}

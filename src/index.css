@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    body {
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        background-color: #EBECF1;
+    }
+    
+    h1, h2, h3, h4, h5, h6 { 
+        font-family: 'Bellefair', serif;
+    }
+    
+    p {
+        letter-spacing: 2px !important;
+        line-height: 1.3rem !important;
+    }
+    
+    button {
+        background-color: #8b673d ;
+        padding: 0.8rem 1rem ;
+        color: #EBECF1 ;
+        border-radius: 2px;
+        font-size: 1rem;
+        letter-spacing: 1.5px;
+        font-family: 'Bellefair', serif;
+        transition: 1000ms;
+    }
+    
+    button:hover {
+        background-color: #8b673dc7 !important;
+    }
+
+}
+
+@layer components {
+
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nav-link {
+        @apply mr-4 text-xl tracking-widest relative before:content-[""] before:absolute before:w-0 before:bg-second-color before:h-[2px] before:top-[90%] before:ease-linear before:duration-300 hover:before:w-full
+    }
+    
+    .NoneActive {
+        opacity: 0;
+        transition: 1000ms;
+    }
+    
+    .Active {
+        opacity: 1;
+        transition: 1000ms;
+    }
+
+    .activeBar {
+        width: 100%;
+        transition: 1000ms;
+
+    }
+
+    .noneActiveBar {
+        width: 0%;
+        transition: 1000ms;
+    }
+    
+    .textCenter {
+        text-align: center;
+        text-align: -moz-center;
+        text-align: -webkit-center;
+    }
+    
+}
+
+
+
