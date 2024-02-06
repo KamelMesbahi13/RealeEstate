@@ -1,15 +1,15 @@
-import React from 'react'
-import { Header, Boxes, ContactForm, Map } from './INDEX';
+import React from "react";
+import { Header, Boxes, ContactForm, Map } from "./INDEX";
 
 const ContactUs = () => {
-    return (
-        <>
-            <Header />
-            <Boxes />
-            <ContactForm />
-            <Map />
-        </>
-    )
-}
+  return (
+    <>
+      <Header />
+      <Boxes />
+      <ContactForm />
+      <Map />
+    </>
+  );
+};
 
-export default ContactUs
+export default ContactUs;
