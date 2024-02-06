@@ -64,11 +64,13 @@ const Footer = () => {
                 <div>
                   <button className="py-[0.9rem] px-8">Send</button>
                 </div>
-                <p className="mt-8">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Pariatur velit officia excepturi molestiae eveniet
-                  consequatur.
-                </p>
+                <div>
+                  <p className="mt-8">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Pariatur velit officia excepturi molestiae eveniet
+                    consequatur.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
