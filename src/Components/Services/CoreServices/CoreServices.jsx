@@ -38,7 +38,7 @@ const CoreServices = () => {
                 return (
                   <div
                     key={id}
-                    className="bg-white h-[60vh] text-center w-[90%] shadow-lg rounded-sm relative before:absolute before:w-0 before:h-1 before:transition-all before:duration-1000 before:bottom-0 before:left-0 before:bg-third-color hover:before:w-full"
+                    className="bg-white h-[50vh] md:h-[60vh] text-center w-[90%] shadow-lg rounded-sm relative before:absolute before:w-0 before:h-1 before:transition-all before:duration-1000 before:bottom-0 before:left-0 before:bg-third-color hover:before:w-full"
                   >
                     <img
                       src={img}
