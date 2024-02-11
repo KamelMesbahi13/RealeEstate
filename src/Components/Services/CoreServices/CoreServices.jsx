@@ -1,6 +1,8 @@
 import React from "react";
 import Data from "./Data";
 import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const CoreServices = () => {
   return (
@@ -38,7 +40,8 @@ const CoreServices = () => {
                     key={id}
                     className="bg-white h-[50vh] md:h-[60vh] text-center w-[90%] shadow-lg rounded-sm relative before:absolute before:w-0 before:h-1 before:transition-all before:duration-1000 before:bottom-0 before:left-0 before:bg-third-color hover:before:w-full"
                   >
-                    <img
+                    <LazyLoadImage
+                      effect="blur"
                       src={img}
                       className="w-[65%] h-[23vh] mx-auto"
                       alt={alt}

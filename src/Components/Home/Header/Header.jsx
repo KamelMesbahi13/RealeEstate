@@ -25,7 +25,7 @@ export default function App() {
         {Data.map(({ img, alt, id, caption }) => {
           return (
             <SwiperSlide key={id} className="relative">
-              <LazyLoadImage
+              <img
                 className="h-[50vh] md:h-[100vh] w-full"
                 effect="blur"
                 src={img}

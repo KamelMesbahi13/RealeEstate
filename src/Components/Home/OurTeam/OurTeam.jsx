@@ -1,5 +1,7 @@
 import React from "react";
 import Data from "./OurTeamData";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const OurTeam = () => {
   return (
@@ -16,7 +18,8 @@ const OurTeam = () => {
             {Data.map(({ id, image, name, job }) => {
               return (
                 <div key={id} className="mt-4">
-                  <img
+                  <LazyLoadImage
+                    effect="blur"
                     src={image}
                     alt={name}
                     className="h-[20vh] md:h-[50vh]"

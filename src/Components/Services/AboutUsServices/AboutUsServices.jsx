@@ -1,6 +1,8 @@
 import React from "react";
 import Img from "../../../assets/ImgNum6.jpg";
 import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const AboutUsServices = () => {
   return (
@@ -43,7 +45,8 @@ const AboutUsServices = () => {
             </div>
 
             <div>
-              <img
+              <LazyLoadImage
+                effect="blur"
                 className="h-[50vh] sm:h-[55vh] md:h-[70vh] lg:h-[100vh]"
                 src={Img}
                 alt="Img Num 6"
