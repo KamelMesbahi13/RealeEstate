@@ -1,5 +1,7 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import "swiper/css";
 import "./swiper.css";
 import { Autoplay } from "swiper";
@@ -23,8 +25,9 @@ export default function App() {
         {Data.map(({ img, alt, id, caption }) => {
           return (
             <SwiperSlide key={id} className="relative">
-              <img
+              <LazyLoadImage
                 className="h-[50vh] md:h-[100vh] w-full"
+                effect="blur"
                 src={img}
                 alt={alt}
               />
