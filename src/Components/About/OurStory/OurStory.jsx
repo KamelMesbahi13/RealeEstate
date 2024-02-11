@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 
 const OurStory = () => {
-  const [content, setContent] = useState(false);
-
-  const activeClassContent = window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      setContent(true);
-    }
-  });
-
-  useEffect(() => {
-    window.addEventListener("scroll", activeClassContent);
-    return () => {
-      window.removeEventListener("scroll", activeClassContent);
-    };
-  }, []);
-
   return (
     <>
-      <div className={content ? "Active my-28" : "NoneActive"}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        className="my-28"
+      >
         <div className="container">
           <div className="flex flex-col text-center md:flex-row md:justify-between md:text-left items-center">
             <div className="mb-8 md:mb-0">
@@ -51,7 +47,7 @@ const OurStory = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

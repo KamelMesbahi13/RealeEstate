@@ -1,25 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import img from "../../../assets/Team1.jpg";
+import { motion } from "framer-motion";
 
 const OurCompany = () => {
-  const [content, setContent] = useState(false);
-
-  const activeClassContent = window.addEventListener("scroll", () => {
-    if (window.scrollY > 700) {
-      setContent(true);
-    }
-  });
-
-  useEffect(() => {
-    window.addEventListener("scroll", activeClassContent);
-    return () => {
-      window.removeEventListener("scroll", activeClassContent);
-    };
-  }, []);
-
   return (
     <>
-      <div className={content ? "Active" : "NoneActive"}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+      >
         <div className="container">
           <div className="flex flex-col justify-between items-center sm:flex-row">
             <div>
@@ -51,7 +46,7 @@ const OurCompany = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

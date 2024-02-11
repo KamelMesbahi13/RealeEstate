@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import img from "../../../assets/ImgNum11.jpg";
+import { motion } from "framer-motion";
 
 const Inter = () => {
-  const [content, setContent] = useState(false);
-
-  const activeClassContent = window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      setContent(true);
-    }
-  });
-
-  useEffect(() => {
-    window.addEventListener("scroll", activeClassContent);
-    return () => {
-      window.removeEventListener("scroll", activeClassContent);
-    };
-  }, []);
-
   return (
     <>
-      <div className={content ? "Active mt-16" : "NoneActive"}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        className="mt-16"
+      >
         <div className="container">
           <div className="flex flex-col justify-between items-center sm:flex-row">
             <div>
@@ -51,7 +47,7 @@ const Inter = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
