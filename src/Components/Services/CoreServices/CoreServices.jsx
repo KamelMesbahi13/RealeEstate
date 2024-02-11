@@ -1,23 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Data from "./Data";
+import { motion } from "framer-motion";
 
 const CoreServices = () => {
-  const [progress, setProgress] = useState(false);
-
-  const activeClass = window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
-      setProgress(true);
-    }
-  });
-
-  useEffect(() => {
-    window.addEventListener("scroll", activeClass);
-    return window.removeEventListener("scroll", activeClass);
-  }, []);
-
   return (
     <>
-      <div className={progress ? "Active mt-28" : "NoneActive"}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        className="mt-28"
+      >
         <div className="container">
           <div>
             <h5 className="relative mb-2 text-xl w-fit left-12 before:absolute before:top-1/2 before:right-[103%] before:-translate-y-1/2 before:w-[30%] before:bg-second-color before:h-[2px]">
@@ -53,7 +51,7 @@ const CoreServices = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

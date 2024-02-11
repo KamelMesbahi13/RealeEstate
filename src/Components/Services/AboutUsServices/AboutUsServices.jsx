@@ -1,25 +1,21 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
 import Img from "../../../assets/ImgNum6.jpg";
+import { motion } from "framer-motion";
 
 const AboutUsServices = () => {
-  const [progress, setProgress] = useState(false);
-
-  const activeClass = window.addEventListener("scroll", () => {
-    if (window.scrollY > 1340) {
-      setProgress(true);
-    }
-  });
-
-  useEffect(() => {
-    window.addEventListener("scroll", activeClass);
-    return window.removeEventListener("scroll", activeClass);
-  }, []);
-
   return (
     <>
-      <div className={progress ? "Active mt-16" : "NoneActive"}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        className="Active mt-16"
+      >
         <div className="container">
           <div className="flex flex-col sm:flex-row sm:justify-between items-center">
             <div className="w-full sm:w-[60%] mr-8">
@@ -55,7 +51,7 @@ const AboutUsServices = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
