@@ -1,6 +1,8 @@
 import React from "react";
 import img from "../../../assets/ImgNum11.jpg";
 import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Inter = () => {
   return (
@@ -19,7 +21,8 @@ const Inter = () => {
         <div className="container">
           <div className="flex flex-col justify-between items-center sm:flex-row">
             <div>
-              <img
+              <LazyLoadImage
+                effect="blur"
                 src={img}
                 className="w-full h-[50vh] md:h-[100vh]"
                 alt="Team Image"

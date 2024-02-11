@@ -3,6 +3,8 @@ import Loader from "../../Ui/Loading/Loader";
 import axios from "axios";
 import Sale from "../Sale/Sale";
 import SaleInter from "../SalesInter/SaleInter";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Url = "https://zoopla.p.rapidapi.com/properties/list";
 
@@ -68,7 +70,8 @@ const Tranding = () => {
                 <div key={i}>
                   <div>
                     <div className="bg-white rounded-sm pb-4">
-                      <img
+                      <LazyLoadImage
+                        effect="blur"
                         className="w-full h-[40vh]"
                         src={prop.image_url}
                         alt={prop.agent_name}
