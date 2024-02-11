@@ -1,6 +1,8 @@
 import React from "react";
 import imgOne from "../../../assets/ImgNum4.jpg";
 import { BsArrowRight } from "react-icons/bs";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { motion } from "framer-motion";
 
 const Interiors = () => {
@@ -39,7 +41,8 @@ const Interiors = () => {
               </div>
             </div>
             <div>
-              <img
+              <LazyLoadImage
+                effect="blur"
                 className="md:h-[100vh] h-[50vh] w-[45rem]"
                 src={imgOne}
                 alt="description img one"
