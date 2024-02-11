@@ -1,6 +1,8 @@
 import React from "react";
 import imgNumOne from "../../../assets/ContactUsTalk.jpg";
 import imgNumTwo from "../../../assets/ContactUsSupport.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Boxes = () => {
   return (
@@ -9,7 +11,8 @@ const Boxes = () => {
         <div className="container">
           <div className="flex flex-col sm:flex-row justify-evenly textCenter">
             <div className="bg-white mb-4 sm:mb-0 sm:w-[40%]">
-              <img
+              <LazyLoadImage
+                effect="blur"
                 className="h-[20vh] rounded-[50%] p-4"
                 src={imgNumOne}
                 alt="imgNumOne"
@@ -28,7 +31,8 @@ const Boxes = () => {
               </div>
             </div>
             <div className="bg-white sm:w-[40%]">
-              <img
+              <LazyLoadImage
+                effect="blur"
                 className="h-[20vh] rounded-[50%]"
                 src={imgNumTwo}
                 alt="imgNumTwo"
