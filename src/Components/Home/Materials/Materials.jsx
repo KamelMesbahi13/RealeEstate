@@ -1,26 +1,22 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import imgOne from "../../../assets/ImgNum10.jpg";
+import { motion } from "framer-motion";
 
 const Materials = () => {
-  const [windowValue, setWindowValue] = useState(false);
-
-  const activeClass = window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      setWindowValue(true);
-    }
-  });
-
-  useEffect(() => {
-    window.addEventListener("scroll", activeClass);
-    return window.removeEventListener("scroll", activeClass);
-  }, []);
-
   return (
     <>
-      <div className={windowValue ? "Active mt-8 sm:m-0" : "NoneActive"}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1 },
+        }}
+        className="mt-8 sm:m-0"
+      >
         <div className="flex flex-col items-center sm:p-0 px-8 mx-auto sm:mb-0 sm:flex-row">
           <div className="sm:mx-28 sm:w-[60%] mb-8">
             <h6 className="text-third-color tracking-wider">MATERIALS</h6>
@@ -48,7 +44,7 @@ const Materials = () => {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };
