@@ -4,7 +4,6 @@ import axios from "axios";
 import Sale from "../Sale/Sale";
 import SaleInter from "../SalesInter/SaleInter";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Url = "https://zoopla.p.rapidapi.com/properties/list";
 
@@ -34,7 +33,6 @@ const Tranding = () => {
     setLoading(true);
     try {
       const response = await axios.get(Url, options);
-      console.log(response.data.listing);
       let rentApartment = response.data.listing.slice(31);
       let saleApartment = response.data.listing.slice(20, 29);
       setLoading(false);
@@ -42,7 +40,6 @@ const Tranding = () => {
       setSales(saleApartment);
       setError("");
     } catch (error) {
-      console.log(error);
       setError(error.message);
       setLoading(false);
     }
@@ -71,7 +68,6 @@ const Tranding = () => {
                   <div>
                     <div className="bg-white rounded-sm pb-4">
                       <LazyLoadImage
-                        effect="blur"
                         className="w-full h-[40vh]"
                         src={prop.image_url}
                         alt={prop.agent_name}

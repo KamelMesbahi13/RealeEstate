@@ -1,22 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineCheck } from "react-icons/ai";
-import { motion } from "framer-motion";
 import "./Experience.css";
 
 const Experience = () => {
+  const [progressBar, setProgressBar] = useState(false);
+
+  const activeClass = window.addEventListener("scroll", () => {
+    if (window.scrollY > 1560) {
+      setProgressBar(true);
+    }
+  });
+
+  useEffect(() => {
+    window.addEventListener("scroll", activeClass);
+    return window.removeEventListener("scroll", activeClass);
+  }, []);
+
   return (
     <>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.5 }}
-        variants={{
-          hidden: { opacity: 0 },
-          visible: { opacity: 1 },
-        }}
-        className="mt-16"
-      >
+      <div className="mt-16">
         <div className="container">
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2">
@@ -134,7 +136,7 @@ const Experience = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };
