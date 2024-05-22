@@ -17,7 +17,7 @@ const Boxes = () => {
                 src={imgNumOne}
                 alt="imgNumOne"
               />
-              <div className="p-2">
+              <div className="p-3">
                 <h2 className="text-xl sm:text-2xl mt-2">
                   Talk To A Member Of Our Team
                 </h2>
