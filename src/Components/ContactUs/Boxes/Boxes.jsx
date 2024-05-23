@@ -39,7 +39,7 @@ const Boxes = () => {
               />
               <div className="p-2">
                 <h2 className="text-xl sm:text-2xl mt-2">
-                  Apartments And Account Support
+                  Apartments And Account Support.
                 </h2>
                 <p className="my-4">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
